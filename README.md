@@ -19,3 +19,9 @@ Out of the box support for:
 - [🤗 `transformers.js`](https://huggingface.co/docs/transformers.js/en/index) (both Browser and Node.js)
 - [vLLM](https://github.com/vllm-project/vllm)
 - [SGLang](https://github.com/sgl-project/sglang)
+
+## Acknowledgement
+
+- [`boring`](https://github.com/cloudflare/boring)
+- [Why BoringSSL?](https://github.com/sfackler/rust-openssl/issues/1519#issue-984198410)
+- [Oxy is Cloudflare's Rust-based next generation proxy framework](https://blog.cloudflare.com/introducing-oxy/)

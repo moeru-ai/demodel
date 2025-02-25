@@ -4,5 +4,9 @@ dictionaryDefinitions: []
 dictionaries: []
 words:
   - demodel
+  - hudsucker
+  - pkey
+  - rcgen
+  - rustls
 ignoreWords: []
 import: []
