@@ -75,14 +75,18 @@ impl CacheHandler {
     }
 
     fn cache_path(&self, uri: &Uri) -> PathBuf {
+        // Extract the host from the URI
+        let host = uri.host().unwrap_or("unknown_host").to_string();
+
         // Create a hash of the URI to use as the filename
         let mut hasher = Sha256::new();
         hasher.update(uri.to_string().as_bytes());
         let hash = format!("{:x}", hasher.finalize());
 
-        // Create subdirectories based on the first few characters of the hash
+        // Create host directory and subdirectories based on the first few characters of the hash
+        let host_dir = self.cache_dir.join(host);
         let subdir = &hash[0..2];
-        let path = self.cache_dir.join(subdir);
+        let path = host_dir.join(subdir);
 
         if !path.exists() {
             create_dir_all(&path).expect("Failed to create cache subdirectory");
@@ -301,16 +305,16 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     ca_cert_params.distinguished_name = DistinguishedName::new();
     ca_cert_params.distinguished_name.push(
-        DnType::CommonName,
-        DnValue::PrintableString("Demodel Proxy CA".try_into().unwrap()),
+        DnType::CountryName,
+        DnValue::PrintableString("US".try_into().unwrap()),
     );
     ca_cert_params.distinguished_name.push(
         DnType::OrganizationName,
         DnValue::PrintableString("Demodel".try_into().unwrap()),
     );
     ca_cert_params.distinguished_name.push(
-        DnType::CountryName,
-        DnValue::PrintableString("US".try_into().unwrap()),
+        DnType::CommonName,
+        DnValue::PrintableString("Demodel Proxy CA".try_into().unwrap()),
     );
 
     ca_cert_params.is_ca = IsCa::Ca(BasicConstraints::Unconstrained);
