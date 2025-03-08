@@ -3,12 +3,18 @@ ignorePaths: []
 dictionaryDefinitions: []
 dictionaries: []
 words:
+  - clippy
   - demodel
+  - direnv
   - hudsucker
   - huggingface
   - moeru
+  - nixpkgs
   - pkey
+  - pkgs
+  - pname
   - rcgen
+  - rustc
   - rustls
 ignoreWords: []
 import: []
