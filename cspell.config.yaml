@@ -16,5 +16,7 @@ words:
   - rcgen
   - rustc
   - rustls
+  - samber
+  - truststore
 ignoreWords: []
 import: []

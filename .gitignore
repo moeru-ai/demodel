@@ -31,3 +31,17 @@ go.work.sum
 
 # build result
 /result
+
+# Multi-media binaries
+*.pcm
+*.wav
+*.ogg
+*.mp3
+
+# Credentials
+cert*/
+*.pem
+*.crt
+*.cer
+*.key
+*.p12
