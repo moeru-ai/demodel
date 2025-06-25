@@ -3,9 +3,12 @@ ignorePaths: []
 dictionaryDefinitions: []
 dictionaries: []
 words:
+  - certifi
   - clippy
   - demodel
   - direnv
+  - elazarl
+  - goproxy
   - hudsucker
   - huggingface
   - moeru
@@ -17,6 +20,8 @@ words:
   - rustc
   - rustls
   - samber
+  - smallstep
+  - spki
   - truststore
 ignoreWords: []
 import: []
